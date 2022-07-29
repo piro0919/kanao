@@ -18,12 +18,9 @@
 .article {
   position: relative;
   @include mq.mq($until: tablet) {
-    aspect-ratio: 9 / 16;
+    aspect-ratio: 3 / 4;
   }
-  @include mq.mq($from: tablet, $until: desktop) {
-    aspect-ratio: 4 / 3;
-  }
-  @include mq.mq($from: desktop) {
+  @include mq.mq($from: tablet) {
     aspect-ratio: 16 / 9;
   }
 }
@@ -34,28 +31,60 @@
   color: #fff;
   display: flex;
   flex-direction: column;
+  gap: 24px;
   inset: 0;
   justify-content: center;
   left: 0;
   padding: 12px;
   position: absolute;
   top: 0;
-  @include mq.mq($until: tablet) {
-    gap: 12px;
-  }
-  @include mq.mq($from: tablet) {
-    gap: 24px;
-  }
 }
 
 .heading2 {
   font-family: "Shippori Mincho", serif;
 }
 
+.swiper,
 .paragraph {
   max-width: 640px;
   width: 100%;
-  @include mq.mq($until: tablet) {
-    font-size: 1.6rem;
-  }
+}
+
+.swiper :global(.swiper-wrapper) {
+  padding: 0 0 48px;
+}
+
+.swiperSlide {
+  align-items: center;
+  display: flex;
+  height: calc(100% - 48px);
+}
+
+.swiper :global(.swiper-pagination) {
+  bottom: 0;
+  counter-reset: hoge;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  position: absolute;
+}
+
+.swiper :global(.swiper-pagination) > * {
+  align-items: center;
+  background: #333;
+  border-radius: 100vmax;
+  counter-increment: hoge;
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  position: relative;
+  width: 32px;
+}
+
+.swiper :global(.swiper-pagination) > *::after {
+  color: #fff;
+  content: counter(hoge);
+  display: block;
+  font-size: 1.6rem;
+  position: absolute;
 }

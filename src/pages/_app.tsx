@@ -11,6 +11,8 @@ import "react-vertical-timeline-component/style.min.css";
 import "ress";
 import "styles/globals.scss";
 import "styles/mq-settings.scss";
+import "swiper/css";
+import "swiper/css/pagination";
 
 dayjs.locale("ja");
 

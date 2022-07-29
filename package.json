@@ -17,6 +17,7 @@
     "ress": "5.0.2",
     "sass": "1.53.0",
     "sass-mq": "6.0.0",
+    "swiper": "8.3.2",
     "usehooks-ts": "2.6.0"
   },
   "devDependencies": {

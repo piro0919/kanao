@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { A11y, Autoplay, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./style.module.scss";
 
 function BusinessContent(): JSX.Element {
@@ -15,19 +17,41 @@ function BusinessContent(): JSX.Element {
         />
         <div className={styles.inner}>
           <h2 className={styles.heading2}>切り身に対応した病院給食</h2>
-          <p className={styles.paragraph}>
-            切り身のグラム指定、腹骨取り、骨なしなど様々な対応をさせていただいております。
-            <br />
-            運搬の際の温度管理にも保冷車の使用や氷打ちなどを行い注意を払っております。
-            <br />
-            少量での配送も承っております。
-            <br />
-            ご連絡いただければ、切り身のおおよその価格をお伝えすることもできます。
-            <br />
-            金尾本店は、美味しいお魚でＱＯＬの向上を応援致します。
-            <br />
-            是非一度ご相談ください。
-          </p>
+          <Swiper
+            autoplay={{
+              delay: 5000,
+            }}
+            className={styles.swiper}
+            loop={true}
+            modules={[A11y, Autoplay, Pagination]}
+            pagination={{
+              clickable: true,
+            }}
+            slidesPerView={1}
+            spaceBetween={0}
+          >
+            <SwiperSlide className={styles.swiperSlide}>
+              <p>
+                切り身のグラム指定、腹骨取り、骨なしなど様々な対応をさせていただいております。
+                <br />
+                運搬の際の温度管理にも保冷車の使用や氷打ちなどを行い注意を払っております。
+              </p>
+            </SwiperSlide>
+            <SwiperSlide className={styles.swiperSlide}>
+              <p>
+                少量での配送も承っております。
+                <br />
+                ご連絡いただければ、切り身のおおよその価格をお伝えすることもできます。{" "}
+              </p>
+            </SwiperSlide>
+            <SwiperSlide className={styles.swiperSlide}>
+              <p>
+                金尾本店は、美味しいお魚でＱＯＬの向上を応援致します。
+                <br />
+                是非一度ご相談ください。
+              </p>
+            </SwiperSlide>
+          </Swiper>
         </div>
       </article>
       <article className={styles.article}>
@@ -41,20 +65,41 @@ function BusinessContent(): JSX.Element {
         />
         <div className={styles.inner}>
           <h2 className={styles.heading2}>飲食店への卸</h2>
-          <p className={styles.paragraph}>
-            スーパーや他店には無い商品も多く取り扱っております。
-            <br />
-            電話やFAXでの事前注文をいただければ、仕入先各所へ連絡を行い入荷対応を行います。
-            <br />
-            時化の状況により入荷がない場合がございます。
-            <br />
-            購入商品が決まっている（定番化している）場合、店舗へ足を運ばずFAXで注文をいただき、水洗いや3枚卸などの加工の後、配送させていただくことができます。
-            <br />
-            もちろん、店舗にて並んでいる商品を直接見てお買い求めいただくお客様も多くいらっしゃいます。
-            <br />
-            福山市内のみならず、尾道エリアにも配送ルートがありますので、是非一度ご相談ください。
-            <br />
-          </p>
+          <Swiper
+            autoplay={{
+              delay: 5000,
+            }}
+            className={styles.swiper}
+            loop={true}
+            modules={[A11y, Autoplay, Pagination]}
+            pagination={{
+              clickable: true,
+            }}
+            slidesPerView={1}
+            spaceBetween={0}
+          >
+            <SwiperSlide className={styles.swiperSlide}>
+              <p>
+                スーパーや他店には無い商品も多く取り扱っております。
+                <br />
+                電話やFAXでの事前注文をいただければ、仕入先各所へ連絡を行い入荷対応を行います。
+                <br />
+                時化の状況により入荷がない場合がございます。
+              </p>
+            </SwiperSlide>
+            <SwiperSlide className={styles.swiperSlide}>
+              <p>
+                購入商品が決まっている（定番化している）場合、店舗へ足を運ばずFAXで注文をいただき、水洗いや3枚卸などの加工の後、配送させていただくことができます。
+                <br />
+                もちろん、店舗にて並んでいる商品を直接見てお買い求めいただくお客様も多くいらっしゃいます。
+              </p>
+            </SwiperSlide>
+            <SwiperSlide className={styles.swiperSlide}>
+              <p>
+                福山市内のみならず、尾道エリアにも配送ルートがありますので、是非一度ご相談ください。
+              </p>
+            </SwiperSlide>
+          </Swiper>
         </div>
       </article>
       <article className={styles.article}>
@@ -68,25 +113,47 @@ function BusinessContent(): JSX.Element {
         />
         <div className={styles.inner}>
           <h2 className={styles.heading2}>一般消費者様への販売</h2>
-          <p className={styles.paragraph}>
-            全国の漁港から入荷した、鮮度の良いお魚を数多く取り扱っております。
-            <br />
-            店舗では商品はパック詰めされておらず、量り売りとなっております。
-            <br />
-            希望商品を希望の量でお売りすることができます。
-            <br />
-            なお、価格は仕入れ状況により変動するため時価となっております。
-            <br />
-            刺身の盛り合わせ（大皿盛り・船盛り・鯛姿造り）、ハモの湯引き、カツオのたたきなどにも対応させていただきます。
-            <br />
-            お時間がかかる場合がございますので、電話や店舗訪問での事前注文をおすすめしております。
-            <br />
-            鮮度にこだわっているため、入荷当日に商品を売り切るようにしております。
-            <br />
-            その為、午後になると商品が少なくなっている場合がございます。
-            <br />
-            大皿でのお刺身の盛り合わせなどは前日までにご注文いただくことをお勧めしております。
-          </p>
+          <Swiper
+            autoplay={{
+              delay: 5000,
+            }}
+            className={styles.swiper}
+            loop={true}
+            modules={[A11y, Autoplay, Pagination]}
+            pagination={{
+              clickable: true,
+            }}
+            slidesPerView={1}
+            spaceBetween={0}
+          >
+            <SwiperSlide className={styles.swiperSlide}>
+              <p>
+                全国の漁港から入荷した、鮮度の良いお魚を数多く取り扱っております。
+                <br />
+                店舗では商品はパック詰めされておらず、量り売りとなっております。
+                <br />
+                希望商品を希望の量でお売りすることができます。
+                <br />
+                なお、価格は仕入れ状況により変動するため時価となっております。
+              </p>
+            </SwiperSlide>
+            <SwiperSlide className={styles.swiperSlide}>
+              <p>
+                刺身の盛り合わせ（大皿盛り・船盛り・鯛姿造り）、ハモの湯引き、カツオのたたきなどにも対応させていただきます。
+                <br />
+                お時間がかかる場合がございますので、電話や店舗訪問での事前注文をおすすめしております。
+              </p>
+            </SwiperSlide>
+            <SwiperSlide className={styles.swiperSlide}>
+              <p>
+                鮮度にこだわっているため、入荷当日に商品を売り切るようにしております。
+                <br />
+                その為、午後になると商品が少なくなっている場合がございます。
+                <br />
+                大皿でのお刺身の盛り合わせなどは前日までにご注文いただくことをお勧めしております。
+              </p>
+            </SwiperSlide>
+          </Swiper>
         </div>
       </article>
       <article className={styles.article}>
