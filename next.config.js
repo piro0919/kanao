@@ -2,6 +2,7 @@ const path = require("path");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  optimizeFonts: false,
   reactStrictMode: true,
   sassOptions: {
     additionalData: async (content, { resourcePath }) => {
