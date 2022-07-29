@@ -90,7 +90,17 @@ function SetouchiFishTop({ fishes }: SetouchiFishTopProps): JSX.Element {
                 </div>
               ) : null}
               <div className={styles.textsWrapper}>
-                <span className={styles.name}>{name}</span>
+                <div className={styles.topWrapper}>
+                  {season.includes(currentMonth) ? (
+                    <Image
+                      alt="今が旬"
+                      height={64}
+                      src="/2607726.png"
+                      width={64}
+                    />
+                  ) : null}
+                  <span className={styles.name}>{name}</span>
+                </div>
                 {description ? (
                   <p className={styles.description}>{description}</p>
                 ) : null}
@@ -98,7 +108,7 @@ function SetouchiFishTop({ fishes }: SetouchiFishTopProps): JSX.Element {
             </div>
           </VerticalTimelineElement>
         )),
-    [allMonth, fishes, width]
+    [allMonth, currentMonth, fishes, width]
   );
 
   return (
