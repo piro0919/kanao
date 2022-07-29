@@ -1,3 +1,4 @@
+import NoSSR from "@mpth/react-no-ssr";
 import Drawer from "components/Drawer";
 import Footer from "components/Footer";
 import noScroll from "no-scroll";
@@ -26,7 +27,7 @@ function Layout({ children }: LayoutProps): JSX.Element {
     }
 
     noScroll.off();
-  }, [isOpen]);
+  }, [isOpen, offIsOpen, onIsOpen]);
 
   return (
     <>
@@ -38,7 +39,9 @@ function Layout({ children }: LayoutProps): JSX.Element {
         </button>
       </div>
       <div className={styles.drawerWrapper}>
-        <Drawer onClose={offIsOpen} open={isOpen} />
+        <NoSSR>
+          <Drawer onClose={offIsOpen} open={isOpen} />
+        </NoSSR>
       </div>
     </>
   );

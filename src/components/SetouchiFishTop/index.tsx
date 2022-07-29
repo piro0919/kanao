@@ -103,7 +103,11 @@ function SetouchiFishTop({ fishes }: SetouchiFishTopProps): JSX.Element {
 
   return (
     <div className={styles.wrapper}>
-      <VerticalTimeline className={styles.verticalTimeline} lineColor="#333">
+      <VerticalTimeline
+        animate={false}
+        className={styles.verticalTimeline}
+        lineColor="#333"
+      >
         {items}
       </VerticalTimeline>
     </div>

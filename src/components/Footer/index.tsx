@@ -1,4 +1,5 @@
 import { Separator } from "@radix-ui/react-separator";
+import { AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai";
 import styles from "./style.module.scss";
 
 function Footer(): JSX.Element {
@@ -34,7 +35,27 @@ function Footer(): JSX.Element {
             <span>6:30～16:00（水曜日のみ 6:30～12:00）</span>
           </div>
         </div>
-        <span>&copy; 2022 金尾本店</span>
+        <div className={styles.inner2}>
+          <span>&copy; 2022 金尾本店</span>
+          <div className={styles.anchorsWrapper}>
+            <a
+              className={styles.anchor}
+              href="https://www.facebook.com/%E6%9C%89%E9%99%90%E4%BC%9A%E7%A4%BE-%E9%87%91%E5%B0%BE%E6%9C%AC%E5%BA%97-524816214285780/"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <AiOutlineFacebook color="#333" size={32} />
+            </a>
+            <a
+              className={styles.anchor}
+              href="https://www.instagram.com/kanaohonten/?hl=ja"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <AiOutlineInstagram color="#333" size={32} />
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );

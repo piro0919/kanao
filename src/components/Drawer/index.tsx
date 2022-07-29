@@ -18,11 +18,16 @@ function Drawer({ onClose, open }: DrawerProps): JSX.Element {
       navigations.map(({ href, title }) => (
         <li key={href}>
           <Link href={href}>
-            <a className={pathname === href ? styles.active : ""}>{title}</a>
+            <a
+              className={pathname === href ? styles.active : ""}
+              onClick={onClose}
+            >
+              {title}
+            </a>
           </Link>
         </li>
       )),
-    [navigations, pathname]
+    [navigations, onClose, pathname]
   );
 
   return (

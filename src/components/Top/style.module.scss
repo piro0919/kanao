@@ -44,10 +44,15 @@
 }
 
 .imageWrapper {
-  aspect-ratio: 16 / 9;
   max-width: 680px;
   position: relative;
   width: 100%;
+  @include mq.mq($until: tablet) {
+    aspect-ratio: 4 / 3;
+  }
+  @include mq.mq($from: tablet) {
+    aspect-ratio: 16 / 9;
+  }
 }
 
 .textsWrapper {
