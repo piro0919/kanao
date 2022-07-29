@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { A11y, Autoplay, Pagination } from "swiper";
+import { A11y, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./style.module.scss";
 
@@ -18,12 +18,9 @@ function BusinessContent(): JSX.Element {
         <div className={styles.inner}>
           <h2 className={styles.heading2}>切り身に対応した病院給食</h2>
           <Swiper
-            autoplay={{
-              delay: 5000,
-            }}
             className={styles.swiper}
             loop={true}
-            modules={[A11y, Autoplay, Pagination]}
+            modules={[A11y, Pagination]}
             pagination={{
               clickable: true,
             }}
@@ -66,12 +63,9 @@ function BusinessContent(): JSX.Element {
         <div className={styles.inner}>
           <h2 className={styles.heading2}>飲食店への卸</h2>
           <Swiper
-            autoplay={{
-              delay: 5000,
-            }}
             className={styles.swiper}
             loop={true}
-            modules={[A11y, Autoplay, Pagination]}
+            modules={[A11y, Pagination]}
             pagination={{
               clickable: true,
             }}
@@ -114,12 +108,9 @@ function BusinessContent(): JSX.Element {
         <div className={styles.inner}>
           <h2 className={styles.heading2}>一般消費者様への販売</h2>
           <Swiper
-            autoplay={{
-              delay: 5000,
-            }}
             className={styles.swiper}
             loop={true}
-            modules={[A11y, Autoplay, Pagination]}
+            modules={[A11y, Pagination]}
             pagination={{
               clickable: true,
             }}
