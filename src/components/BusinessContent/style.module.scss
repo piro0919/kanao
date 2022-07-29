@@ -1,0 +1,61 @@
+.wrapper {
+  display: grid;
+  gap: 72px;
+  max-width: 1280px;
+  padding-bottom: 120px;
+  padding-top: 72px;
+  width: 100%;
+  @include mq.mq($until: tablet) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  @include mq.mq($from: tablet) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.article {
+  position: relative;
+  @include mq.mq($until: tablet) {
+    aspect-ratio: 9 / 16;
+  }
+  @include mq.mq($from: tablet, $until: desktop) {
+    aspect-ratio: 4 / 3;
+  }
+  @include mq.mq($from: desktop) {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.inner {
+  align-items: center;
+  background: rgba(#000, 0.75);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  inset: 0;
+  justify-content: center;
+  left: 0;
+  padding: 12px;
+  position: absolute;
+  top: 0;
+  @include mq.mq($until: tablet) {
+    gap: 12px;
+  }
+  @include mq.mq($from: tablet) {
+    gap: 24px;
+  }
+}
+
+.heading2 {
+  font-family: "Shippori Mincho", serif;
+}
+
+.paragraph {
+  max-width: 640px;
+  width: 100%;
+  @include mq.mq($until: tablet) {
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,87 @@
+.wrapper {
+  max-width: 1280px;
+  padding-bottom: 120px;
+  padding-top: 72px;
+  width: 100%;
+  @include mq.mq($until: tablet) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  @include mq.mq($from: tablet) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.verticalTimeline::before {
+  background: transparent;
+  border: 1px dashed #333;
+  width: 0;
+}
+
+.verticalTimelineElement {
+  align-items: center;
+  border: 1px solid #333;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.date {
+  color: #333;
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.6rem !important;
+  max-width: 440px;
+  opacity: 1 !important;
+  padding-bottom: 0 !important;
+  top: -2px !important;
+  width: 100%;
+}
+
+.icon {
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+}
+
+.icon::before {
+  background: #333;
+  content: "";
+  display: block;
+  height: 6px;
+  margin: -2px 0 0 -2px;
+  position: absolute;
+  top: 16px;
+  width: 6px;
+  @media only screen and (min-width: 1170px) {
+    top: 24px;
+  }
+}
+
+.inner {
+  max-width: 440px;
+  width: 100%;
+}
+
+.imageWrapper {
+  aspect-ratio: 16 / 9;
+  margin: 0 0 16px;
+  position: relative;
+}
+
+.textsWrapper {
+  display: grid;
+  gap: 8px;
+}
+
+.name {
+  font-family: "Shippori Mincho", serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 1.6rem !important;
+  margin: 0 !important;
+}

@@ -1,0 +1,13 @@
+.navigationWrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  @include mq.mq($until: tablet) {
+    display: none;
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}

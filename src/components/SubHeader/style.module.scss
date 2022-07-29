@@ -1,0 +1,25 @@
+.header {
+  position: relative;
+}
+
+.imageWrapper {
+  height: 100%;
+  position: relative;
+}
+
+.titleWrapper {
+  color: #fff;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  text-shadow: 0 0 8px #000;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.heading1 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 3.6rem;
+  letter-spacing: 4px;
+  white-space: nowrap;
+}

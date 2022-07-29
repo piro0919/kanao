@@ -1,0 +1,54 @@
+.footer {
+  background: #f8f8f8;
+  display: flex;
+  font-size: 1.4rem;
+  justify-content: center;
+}
+
+.inner {
+  align-items: center;
+  display: flex;
+  font-family: arial, sans-serif;
+  gap: 24px 12px;
+  max-width: 1280px;
+  padding-bottom: 36px;
+  padding-top: 24px;
+  width: 100%;
+  @include mq.mq($until: tablet) {
+    flex-direction: column;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  @include mq.mq($from: tablet) {
+    justify-content: space-between;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.title {
+  align-items: baseline;
+  display: flex;
+  font-family: "Yuji Syuku", serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  gap: 8px;
+  @include mq.mq($until: tablet) {
+    justify-content: center;
+  }
+}
+
+.inner2 {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  @include mq.mq($until: tablet) {
+    justify-content: center;
+  }
+}
+
+.separator[data-orientation="vertical"] {
+  background: #333;
+  height: 14px;
+  width: 1px;
+}

@@ -1,0 +1,33 @@
+.wrapper {
+  max-width: 1280px;
+  padding-bottom: 120px;
+  padding-top: 72px;
+  width: 100%;
+  @include mq.mq($until: tablet) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  @include mq.mq($from: tablet) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.iframe {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+.listWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 96px 0 0;
+}
+
+.list {
+  display: grid;
+  font-family: "Shippori Mincho", serif;
+  gap: 4px 24px;
+  grid-template: auto / auto auto;
+  justify-content: flex-start;
+}

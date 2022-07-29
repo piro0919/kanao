@@ -1,0 +1,68 @@
+.navigationWrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  @include mq.mq($until: tablet) {
+    display: none;
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  display: grid;
+  gap: 96px;
+  max-width: 1280px;
+  padding-bottom: 120px;
+  padding-top: 72px;
+  width: 100%;
+  @include mq.mq($until: tablet) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  @include mq.mq($from: tablet) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.article {
+  align-items: center;
+  display: grid;
+  justify-items: center;
+
+  @include mq.mq($from: desktop) {
+    grid-template-columns: 55% 1fr;
+
+    &:nth-child(even) {
+      direction: rtl;
+    }
+  }
+}
+
+.imageWrapper {
+  aspect-ratio: 16 / 9;
+  max-width: 680px;
+  position: relative;
+  width: 100%;
+}
+
+.textsWrapper {
+  align-items: center;
+  align-self: center;
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+.heading2 {
+  font-family: "Shippori Mincho", serif;
+}
+
+.paragraph {
+  line-height: 2;
+}

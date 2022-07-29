@@ -1,0 +1,72 @@
+.wrapper {
+  max-width: 1280px;
+  padding-bottom: 120px;
+  padding-top: 72px;
+  width: 100%;
+  @include mq.mq($until: tablet) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  @include mq.mq($from: tablet) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.list {
+  border-bottom: 1px solid #333;
+  border-right: 1px solid #333;
+  display: grid;
+  @include mq.mq($until: tablet) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  @include mq.mq($from: tablet, $until: desktop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include mq.mq($from: desktop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.item {
+  border-left: 1px solid #333;
+  border-top: 1px solid #333;
+}
+
+.monthWrapper {
+  align-items: center;
+  display: flex;
+  font-family: arial, sans-serif;
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.calendar {
+  border: 0;
+  display: inline;
+}
+
+.calendar :global(abbr) {
+  text-decoration: none;
+}
+
+.tile {
+  cursor: default !important;
+}
+
+.holiday,
+.holiday:hover {
+  background: #d10000 !important;
+  color: #fff !important;
+}
+
+.businessDay,
+.businessDay:hover {
+  background: #fff !important;
+  color: #333 !important;
+}
+
+.textWrapper {
+  padding: 96px 0 0;
+  text-align: center;
+}

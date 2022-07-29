@@ -1,0 +1,33 @@
+.navigation {
+  background: rgba(#fff, 0.9);
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+.inner {
+  align-items: center;
+  display: flex;
+  font-family: arial, sans-serif;
+  font-size: 1.6rem;
+  gap: 24px;
+}
+
+.separator[data-orientation="vertical"] {
+  background: #333;
+  height: 16px;
+  width: 1px;
+}
+
+.active {
+  position: relative;
+}
+
+.active::after {
+  background: #333;
+  content: "";
+  display: block;
+  height: 1px;
+  position: absolute;
+  width: 100%;
+}

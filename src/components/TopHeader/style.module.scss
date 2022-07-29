@@ -1,0 +1,33 @@
+.header {
+  position: relative;
+}
+
+.imageWrapper {
+  height: 100%;
+  position: relative;
+}
+
+.titleWrapper {
+  color: #fff;
+  left: 50%;
+  line-height: 1;
+  position: absolute;
+  text-align: center;
+  text-shadow: 0 0 8px #000;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.heading1 {
+  font-family: "Yuji Syuku", serif;
+  font-size: 8.4rem;
+  letter-spacing: 8px;
+  white-space: nowrap;
+}
+
+.subTitle {
+  font-family: "Shippori Mincho", serif;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  padding: 24px 0 0;
+}
