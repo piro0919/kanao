@@ -6,6 +6,7 @@ import { DefaultSeo } from "next-seo";
 import type { AppProps } from "next/app";
 import { ReactElement, ReactNode } from "react";
 import "react-calendar/dist/Calendar.css";
+import "react-modern-drawer/dist/index.css";
 import "react-vertical-timeline-component/style.min.css";
 import "ress";
 import "styles/globals.scss";

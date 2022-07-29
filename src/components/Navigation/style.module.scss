@@ -25,6 +25,7 @@
 
 .active::after {
   background: #333;
+  bottom: 0;
   content: "";
   display: block;
   height: 1px;

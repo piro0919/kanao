@@ -1,0 +1,24 @@
+.drawer {
+  padding: 24px;
+}
+
+.list {
+  display: grid;
+  font-family: arial, sans-serif;
+  font-size: 1.6rem;
+  gap: 12px;
+}
+
+.active {
+  position: relative;
+}
+
+.active::after {
+  background: #333;
+  bottom: -4px;
+  content: "";
+  display: block;
+  height: 1px;
+  position: absolute;
+  width: 100%;
+}
