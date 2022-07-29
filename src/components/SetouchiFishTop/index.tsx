@@ -96,6 +96,7 @@ function SetouchiFishTop({ fishes }: SetouchiFishTopProps): JSX.Element {
                       alt="今が旬"
                       height={64}
                       src="/2607726.png"
+                      unoptimized={true}
                       width={64}
                     />
                   ) : null}
