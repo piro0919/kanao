@@ -8,13 +8,11 @@ import {
 import { useWindowSize } from "usehooks-ts";
 import styles from "./style.module.scss";
 
-type Season = number[];
-
 type Fish = {
   description?: string;
-  image?: string;
   name: string;
-  seasons: Season[];
+  seasons: number[];
+  thumbnail?: string;
 };
 
 export type SetouchiFishTopProps = {
@@ -37,26 +35,28 @@ function SetouchiFishTop({ fishes }: SetouchiFishTopProps): JSX.Element {
   const items = useMemo(
     () =>
       fishes
-        .flatMap(({ seasons, ...fish }) =>
-          seasons.map((season) => ({ ...fish, season, seasons }))
-        )
-        .sort(({ season: seasonA }, { season: seasonB }) => {
-          const indexA = allMonth.findIndex((month) => seasonA.includes(month));
-          const indexB = allMonth.findIndex((month) => seasonB.includes(month));
+        .sort(({ seasons: seasonsA }, { seasons: seasonsB }) => {
+          const indexA = allMonth.findIndex((month) =>
+            seasonsA.includes(month)
+          );
+          const indexB = allMonth.findIndex((month) =>
+            seasonsB.includes(month)
+          );
 
           if (indexA === indexB) {
-            if (seasonA[0] === seasonB[0]) {
-              return seasonA[seasonA.length - 1] > seasonB[seasonB.length - 1]
+            if (seasonsA[0] === seasonsB[0]) {
+              return seasonsA[seasonsA.length - 1] >
+                seasonsB[seasonsB.length - 1]
                 ? 1
                 : -1;
             }
 
-            return seasonA[0] > seasonB[0] ? 1 : -1;
+            return seasonsA[0] > seasonsB[0] ? 1 : -1;
           }
 
           return indexA > indexB ? 1 : -1;
         })
-        .map(({ description, image, name, season }) => (
+        .map(({ description, name, seasons, thumbnail }) => (
           <VerticalTimelineElement
             contentArrowStyle={{
               background: "#333",
@@ -66,37 +66,35 @@ function SetouchiFishTop({ fishes }: SetouchiFishTopProps): JSX.Element {
             }}
             date={`${dayjs()
               .startOf("month")
-              .set("month", season[0] - 1)
+              .set("month", seasons[0] - 1)
               .format("M月")} 〜 ${dayjs()
               .startOf("month")
-              .set("month", season[season.length - 1] - 1)
+              .set("month", seasons[seasons.length - 1] - 1)
               .format("M月")}`}
             dateClassName={styles.date}
             iconClassName={styles.icon}
-            key={`${name}${season[0]}`}
+            key={`${name}${seasons[0]}`}
             textClassName={styles.verticalTimelineElement}
           >
             <div className={styles.inner}>
-              {image ? (
+              {thumbnail ? (
                 <div className={styles.imageWrapper}>
                   <Image
                     alt={name}
                     layout="fill"
                     objectFit="cover"
                     quality={100}
-                    src={`/images/${image}`}
-                    unoptimized={true}
+                    src={thumbnail}
                   />
                 </div>
               ) : null}
               <div className={styles.textsWrapper}>
                 <div className={styles.topWrapper}>
-                  {season.includes(currentMonth) ? (
+                  {seasons.includes(currentMonth) ? (
                     <Image
                       alt="今が旬"
                       height={64}
                       src="/2607726.png"
-                      unoptimized={true}
                       width={64}
                     />
                   ) : null}

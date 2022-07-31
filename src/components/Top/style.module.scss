@@ -39,6 +39,10 @@
 
     &:nth-child(even) {
       direction: rtl;
+
+      .textsWrapper {
+        direction: ltr;
+      }
     }
   }
 }

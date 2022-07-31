@@ -1,4 +1,3 @@
-import Layout from "components/Layout";
 import dayjs from "dayjs";
 import "dayjs/locale/ja";
 import { NextPage } from "next";
@@ -30,7 +29,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
   return (
     <>
       <DefaultSeo />
-      <Layout>{getLayout(<Component {...pageProps} />)}</Layout>
+      {getLayout(<Component {...pageProps} />)}
     </>
   );
 }

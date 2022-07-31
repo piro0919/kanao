@@ -13,8 +13,7 @@ function TopHeader(): JSX.Element {
           layout="fill"
           objectFit="cover"
           quality={100}
-          src="/images/10523987_524818304285571_903885718066498357_n.jpg"
-          unoptimized={true}
+          src="/10523987_524818304285571_903885718066498357_n.jpg"
         />
       </div>
       <div className={styles.titleWrapper}>

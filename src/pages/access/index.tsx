@@ -1,4 +1,5 @@
 import AccessTop from "components/AccessTop";
+import Layout from "components/Layout";
 import Seo from "components/Seo";
 import SubLayout from "components/SubLayout";
 import { ReactElement } from "react";
@@ -13,7 +14,11 @@ function Access(): JSX.Element {
 }
 
 Access.getLayout = function getLayout(page: ReactElement): JSX.Element {
-  return <SubLayout heading="アクセス">{page}</SubLayout>;
+  return (
+    <Layout>
+      <SubLayout heading="アクセス">{page}</SubLayout>
+    </Layout>
+  );
 };
 
 export default Access;

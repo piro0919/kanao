@@ -3,9 +3,9 @@ import styles from "./style.module.scss";
 
 type Fish = {
   description: string;
-  image?: string;
-  isLiveFish: boolean;
+  isLive: boolean;
   name: string;
+  thumbnail?: string;
 };
 
 export type MainProductProps = {
@@ -26,7 +26,7 @@ function MainProduct({ fishes }: MainProductProps): JSX.Element {
       </div>
       <div className={styles.listWrapper}>
         <ul className={styles.list}>
-          {fishes.map(({ description, image, isLiveFish, name }) => (
+          {fishes.map(({ description, isLive, name, thumbnail }) => (
             <li className={styles.item} key={name}>
               <div className={styles.imageWrapper}>
                 <Image
@@ -34,14 +34,13 @@ function MainProduct({ fishes }: MainProductProps): JSX.Element {
                   layout="fill"
                   objectFit="cover"
                   quality={100}
-                  src={`/images/${image || "l_e_others_501.png"}`}
-                  unoptimized={true}
+                  src={thumbnail || "l_e_others_501.png"}
                 />
               </div>
               <div className={styles.textsWrapper}>
                 <div className={styles.nameWrapper}>
                   <span className={styles.name}>{name}</span>
-                  {isLiveFish ? <abbr>*</abbr> : null}
+                  {isLive ? <abbr>*</abbr> : null}
                 </div>
                 <p>{description}</p>
               </div>

@@ -5,13 +5,9 @@ import styles from "./style.module.scss";
 
 export type HolidayTopProps = {
   holidays: Dayjs[];
-  wednesdayBusinessDays: Dayjs[];
 };
 
-function HolidayTop({
-  holidays,
-  wednesdayBusinessDays,
-}: HolidayTopProps): JSX.Element {
+function HolidayTop({ holidays }: HolidayTopProps): JSX.Element {
   const items = useMemo(
     () =>
       Array(12)
@@ -32,11 +28,6 @@ function HolidayTop({
               showNeighboringMonth={false}
               tileClassName={({ date }): string =>
                 `${styles.tile} ${
-                  dayjs(date).day() === 0 ||
-                  (dayjs(date).day() === 3 &&
-                    !wednesdayBusinessDays.some((wednesdayBusinessDay) =>
-                      wednesdayBusinessDay.isSame(date)
-                    )) ||
                   holidays.some((holiday) => holiday.isSame(date))
                     ? styles.holiday
                     : styles.businessDay
@@ -47,7 +38,7 @@ function HolidayTop({
             />
           </li>
         )),
-    [holidays, wednesdayBusinessDays]
+    [holidays]
   );
 
   return (

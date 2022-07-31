@@ -1,58 +1,84 @@
-import axios from "axios";
 import HolidayTop, { HolidayTopProps } from "components/HolidayTop";
+import Layout from "components/Layout";
 import Seo from "components/Seo";
 import SubLayout from "components/SubLayout";
-import dayjs from "dayjs";
-import { ReactElement, useEffect, useState } from "react";
+import { Entry } from "contentful";
+import dayjs, { Dayjs } from "dayjs";
+import client from "libs/client";
+import { GetStaticProps } from "next";
+import { ReactElement, useMemo } from "react";
 
-function Holiday(): JSX.Element {
-  const currentYear = dayjs().get("year");
-  const [holidays, setHolidays] = useState<HolidayTopProps["holidays"]>(
-    // TODO: 0815, 0816 がパターンに当てはまってない
-    ["0102", "0103", "0104", "0815", "0816", "1231"].map((date) =>
-      dayjs(`${currentYear}${date}`)
-    )
+export type HolidayProps = {
+  calendarItems: Entry<Contentful.ICalendarFields>[];
+};
+
+function Holiday({ calendarItems }: HolidayProps): JSX.Element {
+  const { sundays, wednesdays } = useMemo(() => {
+    let date = dayjs().startOf("year");
+    let sundays: Dayjs[] = [];
+    let wednesdays: Dayjs[] = [];
+
+    do {
+      if (date.day() === 0) {
+        sundays = [...sundays, date];
+      }
+
+      if (date.day() === 3) {
+        wednesdays = [...wednesdays, date];
+      }
+
+      date = date.add(1, "day");
+    } while (date.year() === dayjs().year());
+
+    return { sundays, wednesdays };
+  }, []);
+  const holidays = useMemo<HolidayTopProps["holidays"]>(
+    () =>
+      [
+        ...sundays,
+        ...wednesdays,
+        ...calendarItems
+          .filter(({ fields: { isHoliday } }) => isHoliday)
+          .map(({ fields: { date } }) => dayjs(date)),
+      ].filter(
+        (date) =>
+          !calendarItems
+            .filter(({ fields: { isHoliday } }) => !isHoliday)
+            .some(({ fields: { date: fieldDate } }) =>
+              date.isSame(fieldDate, "date")
+            )
+      ),
+    [calendarItems, sundays, wednesdays]
   );
-  const [wednesdayBusinessDays, setWednesdayBusinessDays] = useState<
-    HolidayTopProps["wednesdayBusinessDays"]
-  >([]);
-
-  useEffect(() => {
-    axios(`https://holidays-jp.github.io/api/v1/${currentYear}/date.json`).then(
-      ({ data: holiday }) => {
-        setHolidays((prevHolidays) => [
-          ...prevHolidays,
-          ...Object.keys(holiday).map((holiday) => dayjs(holiday)),
-        ]);
-      }
-    );
-  }, [currentYear]);
-
-  useEffect(() => {
-    axios(`/documents/wednesdayBusinessDays.json`).then(
-      ({ data: wednesdayBusinessDays }) => {
-        setWednesdayBusinessDays(
-          wednesdayBusinessDays.map((wednesdayBusinessDay: string) =>
-            dayjs(`${currentYear}${wednesdayBusinessDay}`)
-          )
-        );
-      }
-    );
-  }, [currentYear]);
 
   return (
     <>
       <Seo title="休業日" />
-      <HolidayTop
-        holidays={holidays}
-        wednesdayBusinessDays={wednesdayBusinessDays}
-      />
+      <HolidayTop holidays={holidays} />
     </>
   );
 }
 
 Holiday.getLayout = function getLayout(page: ReactElement): JSX.Element {
-  return <SubLayout heading="休業日">{page}</SubLayout>;
+  return (
+    <Layout>
+      <SubLayout heading="休業日">{page}</SubLayout>
+    </Layout>
+  );
+};
+
+export const getStaticProps: GetStaticProps<HolidayProps> = async () => {
+  const { items: calendarItems } =
+    await client.getEntries<Contentful.ICalendarFields>({
+      content_type: "calendar" as Contentful.CONTENT_TYPE,
+    });
+
+  return {
+    props: {
+      calendarItems,
+    },
+    revalidate: 60 * 60 * 24,
+  };
 };
 
 export default Holiday;

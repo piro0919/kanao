@@ -2,6 +2,11 @@ const path = require("path");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    images: {
+      unoptimized: true,
+    },
+  },
   optimizeFonts: false,
   reactStrictMode: true,
   sassOptions: {
