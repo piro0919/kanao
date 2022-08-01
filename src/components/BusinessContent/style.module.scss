@@ -20,8 +20,11 @@
   @include mq.mq($until: tablet) {
     aspect-ratio: 3 / 4;
   }
-  @include mq.mq($from: tablet) {
+  @include mq.mq($from: tablet, $until: desktop) {
     aspect-ratio: 16 / 9;
+  }
+  @include mq.mq($from: desktop) {
+    aspect-ratio: 8 / 3;
   }
 }
 
