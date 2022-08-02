@@ -16,7 +16,7 @@ function Seo({ title: propTitle }: SeoProps): JSX.Element {
 
   return (
     <NextSeo
-      canonical="https://kanao.vercel.app/"
+      canonical="https://kanaohonten.vercel.app/"
       openGraph={{
         title,
         description:
@@ -26,14 +26,14 @@ function Seo({ title: propTitle }: SeoProps): JSX.Element {
             alt: title,
             height: 630,
             type: "image/png",
-            url: "https://kanao.vercel.app/og-image-01.png",
+            url: "https://kanaohonten.vercel.app/og-image-01.png",
             width: 1200,
           },
         ],
         locale: "ja",
         site_name: "有限会社 金尾本店",
         type: asPath === "/" ? "website" : "article",
-        url: `https://kanao.vercel.app${asPath}`,
+        url: `https://kanaohonten.vercel.app${asPath}`,
       }}
       title={title}
       twitter={{

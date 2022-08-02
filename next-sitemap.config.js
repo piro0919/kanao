@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 const config = {
-  siteUrl: process.env.SITE_URL || "https://kanao.vercel.app/",
+  siteUrl: process.env.SITE_URL || "https://kanaohonten.vercel.app/",
   generateRobotsTxt: true,
 };
 
