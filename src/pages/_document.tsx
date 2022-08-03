@@ -27,12 +27,27 @@ class MyDocument extends Document {
             rel="preconnect"
           />
           <link
+            as="style"
+            href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap&text=有限会社金尾本店"
+            rel="preload"
+          />
+          <link
             href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap&text=有限会社金尾本店"
             rel="stylesheet"
           />
           <link
+            as="style"
+            href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap"
+            rel="preload"
+          />
+          <link
             href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap"
             rel="stylesheet"
+          />
+          <link
+            as="style"
+            href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap"
+            rel="preload"
           />
           <link
             href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap"

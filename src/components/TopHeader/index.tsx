@@ -12,6 +12,7 @@ function TopHeader(): JSX.Element {
           alt="金尾商店"
           layout="fill"
           objectFit="cover"
+          priority={true}
           quality={100}
           src="/10523987_524818304285571_903885718066498357_n.jpg"
         />
