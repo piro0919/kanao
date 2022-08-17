@@ -31,8 +31,23 @@ function Footer(): JSX.Element {
             </div>
           </div>
           <div className={styles.inner2}>
-            <span>営業時間</span>
-            <span>6:30～16:00（水曜日のみ 6:30～12:00）</span>
+            <div className={styles.inner2}>
+              <span>営業時間</span>
+              <span>6:30～16:00</span>
+            </div>
+            <Separator
+              className={styles.separator}
+              decorative={true}
+              orientation="vertical"
+            />
+            <div className={styles.inner2}>
+              <span>水曜営業日</span>
+              <span>6:30～12:00</span>
+            </div>
+          </div>
+          <div className={styles.inner2}>
+            <span>休業日</span>
+            <span>水曜・日曜・祝日</span>
           </div>
         </div>
         <div className={styles.inner2}>

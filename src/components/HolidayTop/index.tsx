@@ -46,7 +46,7 @@ function HolidayTop({ holidays }: HolidayTopProps): JSX.Element {
       <ul className={styles.list}>{items}</ul>
       <div className={styles.textWrapper}>
         <p>
-          日曜日、祝日、および福山地方卸売市場の臨時休市日である水曜日が休業日となります。
+          日曜、祝日、および福山地方卸売市場の臨時休市日である水曜が休業日となります。
         </p>
       </div>
     </div>

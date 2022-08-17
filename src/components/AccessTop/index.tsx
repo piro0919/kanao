@@ -24,8 +24,10 @@ function AccessTop(): JSX.Element {
           <dt>営業時間</dt>
           <dd>
             <div>6:30～16:00</div>
-            <div>水曜日のみ 6:30～12:00</div>
+            <div>水曜営業日 6:30～12:00</div>
           </dd>
+          <dd>休業日</dd>
+          <dt>水曜・日曜・祝日</dt>
         </dl>
       </div>
     </div>
