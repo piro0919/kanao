@@ -15,7 +15,7 @@ function AccessTop(): JSX.Element {
           <dt>住所</dt>
           <dd>
             <div>有限会社 金尾本店</div>
-            <div>〒720-0806 広島県福山市南町20丁目16</div>
+            <div>〒720-0806 広島県福山市南町20-16</div>
           </dd>
           <dt>TEL</dt>
           <dd>084-922-3886</dd>

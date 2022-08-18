@@ -13,7 +13,7 @@ function Footer(): JSX.Element {
           </div>
           <div className={styles.inner2}>
             <span>〒720-0806</span>
-            <span>広島県福山市南町20丁目16</span>
+            <span>広島県福山市南町20-16</span>
           </div>
           <div className={styles.inner2}>
             <div className={styles.inner2}>
