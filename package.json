@@ -35,7 +35,7 @@
     "@typescript-eslint/eslint-plugin": "5.35.1",
     "contentful-typescript-codegen": "3.2.3",
     "dotenv": "16.0.1",
-    "eslint": "8.22.0",
+    "eslint": "8.23.0",
     "eslint-config-google": "0.14.0",
     "eslint-config-next": "12.2.5",
     "eslint-config-prettier": "8.5.0",
