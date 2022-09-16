@@ -3,8 +3,8 @@
     "@mpth/react-no-ssr": "1.0.1",
     "@radix-ui/react-separator": "1.0.0",
     "axios": "0.27.2",
-    "contentful": "9.1.34",
-    "contentful-management": "10.13.0",
+    "contentful": "9.2.4",
+    "contentful-management": "10.14.0",
     "dayjs": "1.11.5",
     "next": "12.3.0",
     "next-seo": "5.5.0",
@@ -19,7 +19,7 @@
     "ress": "5.0.2",
     "sass": "1.54.9",
     "sass-mq": "6.0.0",
-    "swiper": "8.3.2",
+    "swiper": "8.4.2",
     "usehooks-ts": "2.6.0"
   },
   "devDependencies": {
