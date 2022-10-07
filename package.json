@@ -32,7 +32,7 @@
     "@types/react-calendar": "3.5.3",
     "@types/react-dom": "18.0.6",
     "@types/react-vertical-timeline-component": "3.3.3",
-    "@typescript-eslint/eslint-plugin": "5.38.1",
+    "@typescript-eslint/eslint-plugin": "5.39.0",
     "contentful-typescript-codegen": "3.2.3",
     "dotenv": "16.0.3",
     "eslint": "8.24.0",
