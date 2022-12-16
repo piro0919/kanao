@@ -4,7 +4,7 @@
     "@radix-ui/react-separator": "1.0.1",
     "axios": "0.27.2",
     "contentful": "9.2.14",
-    "contentful-management": "10.22.0",
+    "contentful-management": "10.24.1",
     "dayjs": "1.11.7",
     "next": "12.3.4",
     "next-seo": "5.15.0",
