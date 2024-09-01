@@ -2,7 +2,7 @@
   "dependencies": {
     "@mpth/react-no-ssr": "1.0.1",
     "@radix-ui/react-separator": "1.0.1",
-    "axios": "0.27.2",
+    "axios": "1.7.7",
     "contentful": "9.3.0",
     "contentful-management": "10.27.2",
     "dayjs": "1.11.7",
