@@ -1,8 +1,8 @@
-# 金尾本店 / Kanao Honten
+# Kanao Honten
 
 > Corporate website for Kanao Honten — fresh fish wholesaler in Hiroshima.
 
-創業60年以上、広島県福山市の鮮魚卸店。
+Family-run since 1958.
 
 [🔗 Live Site](https://kanaohonten.vercel.app/)
 
@@ -25,3 +25,7 @@
 pnpm install
 pnpm dev
 ```
+
+## 📄 License
+
+MIT
